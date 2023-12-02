@@ -29,10 +29,13 @@ return new class extends Migration
             $table->string('Domiciliere_mere');
             $table->string('profession_mere');
             $table->string('dresser_le');
-            $table->foreignId('declaration_naissance_id')->constrained(); // sous la declaration de:
-                //on recupere le nom du medecin declarant dans la table declaration
-             $table->foreignId('employer_id')->constrained();// nom_officier
-             $table->string('centre_civil');
+            $table->string('email');
+            $table->string('status');
+            $table->foreignId('declaration_naissance_id')->constrained()->onDelete('cascade');
+             $table->foreignId('employer_id')->constrained()->onDelete('cascade');
+             $table->foreignId('commune_id')->constrained()->onDelete('cascade');
+             $table->foreignId('region_id')->constrained()->onDelete('cascade');
+             $table->foreignId('departement_id')->constrained()->onDelete('cascade');
              $table->string('assistant_officier');
 
             $table->timestamps();

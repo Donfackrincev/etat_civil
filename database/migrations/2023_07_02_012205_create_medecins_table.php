@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('medecins', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('personne_id')->constrained()->unique();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('numero')->nullable();
+            $table->string('email')->nullable();
+            $table->string('domicile')->nullable();
             $table->string('nom_centre');
             $table->enum('fontion', ['sage_femme', 'infimier','docteur']);
             $table->timestamps();

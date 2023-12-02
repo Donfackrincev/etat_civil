@@ -13,9 +13,17 @@ return new class extends Migration
     {
         Schema::create('acte_deces', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('declaration_deces_id')->constrained();
-            $table->foreignId('declaration_naissance_id')->constrained();
-            $table->foreignId('employer_id')->constrained();
+            $table->string('nom_decedes');
+            $table->string('lieu_deces');
+            $table->integer('age_decedes');
+            $table->string('domicile_decedes');
+            $table->string('nom_pere');
+            $table->string('demeur_pere');
+            $table->string('nom_mere');
+            $table->string('demeur_mere');
+            $table->string('date_fabrication');
+            $table->foreignId('declaration_deces_id')->constrained()->onDelete('cascade');
+            $table->foreignId('employer_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

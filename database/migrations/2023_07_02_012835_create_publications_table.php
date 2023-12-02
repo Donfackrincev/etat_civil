@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('num_borderau');
             $table->date('date_publication');
             $table->string('montant_verser');
-            $table->foreignId('employer_id')->constrained();
+            $table->foreignId('employer_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

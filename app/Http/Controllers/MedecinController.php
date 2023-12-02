@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Medecin;
 use App\Models\Personne;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MedecinController extends Controller
@@ -31,6 +32,11 @@ class MedecinController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'nom' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+            'numero' => ['required', 'string', 'max:25'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'domicile' => 'required',
             'nom_centre' => 'required',
             'fontion' => 'required'
         ]);
@@ -64,9 +70,13 @@ class MedecinController extends Controller
     public function update(Request $request, string $id)
     {
         $this->validate($request,[
+            'nom' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+            'numero' => ['required', 'string', 'max:25'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'domicile' => 'required',
             'nom_centre' => 'required',
             'fontion' => 'required'
-
         ]);
         $data = $request->all();
         $medecin = Medecin::find($id);

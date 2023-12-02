@@ -5,7 +5,7 @@ use App\Models\Personne;
 use App\Models\Medecin;
 use App\Models\Employer;
 use App\Models\DeclarationNaissance;
-
+use App\Models\Temoinage;
 use Illuminate\Http\Request;
 
 class DeclarationController extends Controller
@@ -15,8 +15,12 @@ class DeclarationController extends Controller
      */
     public function index()
     {
+        $temoinage = Temoinage::all();
+        $personne = Personne::all();
+        $medecin = Medecin::all();
         $declaration = DeclarationNaissance::all();
-        return view('declaration.index', compact('declaration'));
+        return view('declaration.index', compact('declaration',
+    'temoinage','personne','medecin'));
     }
 
     /**
@@ -24,12 +28,13 @@ class DeclarationController extends Controller
      */
     public function create()
     {
+        $temoinage = Temoinage::all();
         $personne = Personne::all();
         $medecin = Medecin::all();
-        return view('declaration.create',compact('personne','medecin'));
+        return view('declaration.create',compact('personne','medecin','temoinage'));
     }
 
-  
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +42,7 @@ class DeclarationController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            
+
             'nom' => 'required',
             'prenom' => 'required',
             'sexe' => 'required',
@@ -51,6 +56,7 @@ class DeclarationController extends Controller
         $data = $request->all();
         DeclarationNaissance::create($data);
         return redirect('declaration');
+
     }
 
     /**
@@ -67,10 +73,12 @@ class DeclarationController extends Controller
      */
     public function edit(string $id)
     {
+        $temoinage = Temoinage::all();
+
         $personne = Personne::all();
-        $medecin = Medecin::all(); 
+        $medecin = Medecin::all();
         $declaration = DeclarationNaissance::find($id);
-        return view('declaration.edit', compact('personne','medecin','declaration'));
+        return view('declaration.edit', compact('personne','medecin','declaration','temoinage'));
     }
 
     /**
@@ -105,4 +113,11 @@ class DeclarationController extends Controller
         DeclarationNaissance::destroy($id);
         return redirect('declaration');
     }
+
+    // public function search(Request $request){
+        
+    //     $keyword = $request->input('keyword');
+    //     $resultat = DeclarationNaissance::where('medecin_id','id', '%' .$keyword . '%')->get();
+    //     return response()->json($resultat);
+    // }
 }

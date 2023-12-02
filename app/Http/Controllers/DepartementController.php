@@ -11,9 +11,11 @@ class DepartementController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
+        $region = Region::all();
         $departement = Departement::all();
-        return view('departement.index', compact('departement'));
+        return view('departement.index', compact('departement','region'));
     }
 
     /**
@@ -22,7 +24,7 @@ class DepartementController extends Controller
     public function create()
     {
         $region = Region::all();
-        
+
         return view('departement.create', compact('region'));
     }
 
@@ -31,7 +33,7 @@ class DepartementController extends Controller
      */
     public function store(Request $request)
     {
-      
+
         $this->validate($request,[
             'nom_pays' => 'required',
             'nom_departement' => 'required',
@@ -63,7 +65,11 @@ class DepartementController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request,[
+            'nom_pays' => 'required',
+            'nom_departement' => 'required',
+
+        ]);
     }
 
     /**
@@ -71,6 +77,7 @@ class DepartementController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Departement::destroy($id);
+        return redirect('departement');
     }
 }

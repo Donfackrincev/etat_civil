@@ -9,9 +9,5 @@ class Medecin extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
-    public function personne(){
-        return $this->belongsTo(Personne::class);
-    }
 }
 

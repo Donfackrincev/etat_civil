@@ -52,7 +52,7 @@ class DocumentationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $documentation = Documentation::find($id);
     }
 
     /**

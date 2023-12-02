@@ -18,8 +18,13 @@
             </div>
             @endif
 
+
             <div class="card mb-5">
                 <div class="card-body">
+                    <center>
+                        <img src="{{ asset('assets/img/camer.png') }}" class="imm" alt="card image"
+                            style="width: 4%">
+                    </center>
                     <form method="POST" action="{{ url('commune') }}" id="validationTopLabel" class="tooltip-end-top" novalidate="novalidate">
                         @csrf
 

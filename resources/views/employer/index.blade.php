@@ -148,7 +148,7 @@
                                             @endif
 
                                             @if(Auth::User()->hasPermission('employers-delete'))
-                                            <button class="btn btn-icon btn-icon-end btn-danger mb-1" type="submit">
+                                            <button class="btn btn-icon btn-icon-end btn-danger mb-1" type="submit" onclick="return confirm('voulez vous vraiment supprimer')">
 
                                                 <i class="fa fa-trash"></i>
                                             </button>

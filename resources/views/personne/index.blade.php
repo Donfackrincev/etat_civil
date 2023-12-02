@@ -112,8 +112,8 @@
                                     <th class="text-muted text-small text-uppercase">Date de naissance</th>
                                     <th class="text-muted text-small text-uppercase">lieu </th>
                                     <th class="text-muted text-small text-uppercase">sexe</th>
-                                    <th class="text-muted text-small text-uppercase">Nom du pere</th>
-                                    <th class="text-muted text-small text-uppercase">nom de mere</th>
+                                    {{-- <th class="text-muted text-small text-uppercase">Nom du pere</th>
+                                    <th class="text-muted text-small text-uppercase">nom de mere</th> --}}
                                     <th class="text-muted text-small text-uppercase">Action</th>
                                     <th class="empty">&nbsp;</th>
                                 </tr>
@@ -127,8 +127,8 @@
                                    <td> {{ $personne->date_naissance}}</td> 
                                     <td>{{ ($personne->lieu_naissance)}}</td>
                                     <td>{{ $personne->sexe}}</td>
-                                    <td>{{ $personne->nom_pere}}</td>
-                                    <td>{{ $personne->nom_mere}}</td>
+                                    {{-- <td>{{ $personne->nom_pere}}</td>
+                                    <td>{{ $personne->nom_mere}}</td> --}}
 
                                     <td>
 

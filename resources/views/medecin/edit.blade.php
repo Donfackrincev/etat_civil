@@ -24,12 +24,30 @@
                         @csrf
                         {{method_field('PATCH')}}
 
-                        <select class="form-select" id="specificSizeSelect" name="personne_id">
-                            <option selected="selected">Selectionner le Nom</option>
-                            @foreach($personne as $personne)
-                            <option value="{{ $personne->id }}">{{ $personne->id}} </option>
-                            @endforeach
-                        </select> <br>
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="texte" name="nom" value="{{$medecin->nom}}" required="">
+                            <span>Nom du medecin</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="texte" name="prenom" value="{{$medecin->prenom}}" required="">
+                            <span>prenom du medecin</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="number" name="numero" value="{{$medecin->numero}}" required="">
+                            <span>Numero</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="email" name="email" value="{{$medecin->email}}" required="">
+                            <span>Addresse email</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="text" name="domicile" value="{{$medecin->domicile}}" required="">
+                            <span>Domicile</span>
+                        </label>
 
                         <label class="mb-3 top-label">
                             <input class="form-control" type="date" value="{{$medecin->nom_centre}}" name="nom_centre" required="">

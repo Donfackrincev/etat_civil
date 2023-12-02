@@ -1,14 +1,21 @@
 <?php
+
+use App\Http\Controllers\ActedecesController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\DeclarationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MedecinController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\CommuneController;
+use App\Http\Controllers\DeclarationdecesController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\PersonneController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DocumentationController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TemoinageController;
+use App\Http\Controllers\NaissanceController;
+use App\Http\Controllers\PublicationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,9 +33,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+ Route::get('/dashboard', function () {
+     return view('dashboard');
+ })->middleware(['auth', 'verified'])->name('dashboard');
+
+ Route::get('/liste-commune', [HomeController::class, 'commune'])->middleware(['auth', 'verified'])->name('liste-commune');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -96,7 +107,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/delete/{id}', 'destroy')->middleware('permission:medecins-delete');
         Route::get('/{id}', 'show')->middleware('permission:medecins-show');
     });
-    
+
     Route::controller(UserController::class)->prefix('/users')->group( function(){
         Route::get('/', 'index')->middleware('permission:users-read');
         Route::get('/create', 'create')->middleware('permission:users-create');
@@ -108,14 +119,16 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::controller(DeclarationController::class)->prefix('/declaration')->group( function(){
-        Route::get('/', 'index')->middleware('permission:declarations-read');
-        Route::get('/create', 'create');
+        Route::get('/', 'index');
+        Route::get('/create', 'create')->middleware('permission:declaration_naissances-create');
         Route::post('', 'store');
-        Route::get('/{id}/edit', 'edit')->middleware('permission:declarations-update');
+        Route::get('/{id}/edit', 'edit')->middleware('permission:declaration_naissances-update');
         Route::patch('/{id}', 'update');
-        Route::delete('/delete/{id}', 'destroy')->middleware('permission:declarations-delete');
-        Route::get('/{id}', 'show')->middleware('permission:declarations-show');
+        Route::delete('/delete/{id}', 'destroy')->middleware('permission:declaration_naissances-delete');
+        Route::get('/{id}', 'show')->middleware('permission:declaration_naissances-show');
+
     });
+
 
     Route::controller(DepartementController::class)->prefix('/departement')->group( function(){
         Route::get('/', 'index')->middleware('permission:departements-read');
@@ -145,6 +158,57 @@ Route::middleware('auth')->group(function () {
         Route::patch('/{id}', 'update');
         Route::delete('/delete/{id}', 'destroy');
         Route::get('/{id}', 'show');
+    });
+
+    Route::controller(TemoinageController::class)->prefix('/temoinage')->group( function(){
+        Route::get('/', 'index')->middleware('permission:temoinages-read');
+        Route::get('/create', 'create')->middleware('permission:temoinages-create');
+        Route::post('', 'store');
+        Route::get('/{id}/edit', 'edit')->middleware('permission:temoinages-update');
+        Route::patch('/{id}', 'update');
+        Route::delete('/delete/{id}', 'destroy')->middleware('permission:temoinages-delete');
+        Route::get('/{id}', 'show')->middleware('permission:temoinages-show');
+    });
+
+    Route::controller(NaissanceController::class)->prefix('/naissance')->group( function(){
+        Route::get('/', 'index')->middleware('permission:acte_naissances-read');
+        Route::get('/create', 'create')->middleware('permission:acte_naissances-create');
+        Route::post('', 'store');
+        Route::get('/{id}/edit', 'edit')->middleware('permission:acte_naissances-update');
+        Route::patch('/{id}', 'update');
+        Route::delete('/delete/{id}', 'destroy')->middleware('permission:acte_naissances-delete');
+        Route::get('/{id}', 'show')->middleware('permission:acte_naissances-show');
+    });
+    Route::post('/valider_acte', [NaissanceController::class, 'valider_acte']);
+
+    Route::controller(PublicationController::class)->prefix('/publication')->group(function(){
+        Route::get('/', 'index');
+        Route::get('/create', 'create');
+        Route::post('', 'store');
+        Route::get('/{id}/edit', 'edit');
+        Route::patch('/{id}', 'update');
+        Route::delete('/delete/{id}', 'destroy');
+        Route::get('/{id}', 'show');
+    });
+
+    Route::controller(DeclarationdecesController::class)->prefix('/declarationdeces')->group( function(){
+        Route::get('/', 'index')->middleware('permission:declaration_deces-read');
+        Route::get('/create', 'create')->middleware('permission:declaration_deces-create');
+        Route::post('', 'store');
+        Route::get('/{id}/edit', 'edit')->middleware('permission:declaration_deces-update');
+        Route::patch('/{id}', 'update');
+        Route::delete('/delete/{id}', 'destroy')->middleware('permission:declaration_deces-delete');
+        Route::get('/{id}', 'show')->middleware('permission:declaration_deces-show');
+    });
+
+    Route::controller(ActedecesController::class)->prefix('/deces')->group( function(){
+        Route::get('/', 'index')->middleware('permission:acte_deces-read');
+        Route::get('/create', 'create')->middleware('permission:acte_deces-create');
+        Route::post('', 'store');
+        Route::get('/{id}/edit', 'edit')->middleware('permission:acte_deces-update');
+        Route::patch('/{id}', 'update');
+        Route::delete('/delete/{id}', 'destroy')->middleware('permission:acte_deces-delete');
+        Route::get('/{id}', 'show')->middleware('permission:acte_deces-show');
     });
 
 

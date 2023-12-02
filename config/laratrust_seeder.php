@@ -23,14 +23,17 @@ return [
             'publications' => 'c,r,u,d,s,p',
             'declaration_naissances' => 'c,r,u,d,s,p',
             'declaration_deces' => 'c,r,u,d,s,p',
-            'acte_naissances' => 'c,r,u,d,s,p',
+            'acte_naissances' => 'c,r,u,d,s,p,t',
             'acte_deces' => 'c,r,u,d,s,p',
             'acte_mariages' => 'c,r,u,d,s,p',
+            'temoinages' => 'c,r,u,d,',
         ],
         'admin_local' => [
             'regions' => 'c,r,u,d,s',
             'employers' => 'c,r,u,d,s',
             'medecins' => 'c,r,u,d,s',
+            'temoinages' => 'c,r,u,d,',
+
         ],
         'maire' => [
             'profile' => 'r,u',
@@ -38,6 +41,8 @@ return [
        
         'secretaire' => [
             'module_1_name' => 'c,r,u,d',
+            'temoinages' => 'c,r,u,d,',
+
         ],
       
         'statisticien' => [
@@ -52,5 +57,6 @@ return [
         'd' => 'delete',
         's' => 'show',
         'p' => 'print',
+        't' => 'status'
     ],
 ];

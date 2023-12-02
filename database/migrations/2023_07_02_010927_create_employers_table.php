@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->enum('poste',['maire','secretaire','statisticient','officier_naissance','officier_deces','officier_mariage']);
             $table->date('date_prise_foncton');
-            $table->foreignId('personne_id')->constrained();
-            $table->foreignId('commune_id')->constrained();
+            $table->foreignId('personne_id')->constrained()->onDelete('cascade');
+            $table->foreignId('commune_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

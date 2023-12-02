@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('numero')->nullable();
             $table->string('email')->nullable();
             $table->string('domicile')->nullable();
-            $table->string('cni')->nullable();
+            $table->string('cni')->nullable(); 
             $table->string('nationaliter');
             $table->string('profession')->nullable();
             $table->date('date_naissance');

@@ -22,7 +22,9 @@ return new class extends Migration
             $table->string('nom_mere');
             $table->string('domicile')->nullable();
             $table->date('date');
-            $table->foreignId('medecin_id')->constrained();
+            $table->foreignId('medecin_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('temoinage_id')->nullable()->constrained()->onDelete('cascade');
+
             $table->timestamps();
         });
     }

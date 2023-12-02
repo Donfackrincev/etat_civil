@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('acte_mariages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('personne_id')->constrained()->onDelete('cascade');
             $table->string('nom_centre');
             $table->enum('systeme_matrimoniale', ['polygamie', 'Monogami']);
             $table->enum('type_bien', ['commin', 'Separer']);
-            $table->foreignId('publication_id')->constrained();
-            $table->foreignId('personne_id')->constrained();
-            $table->foreignId('employer_id')->constrained();
+            $table->foreignId('publication_id')->constrained()->onDelete('cascade');
+            $table->foreignId('employer_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

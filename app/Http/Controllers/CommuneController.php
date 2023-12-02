@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Commune;
 use App\Models\Departement;
+use App\Models\User;
+use App\Notifications\sendParentRegistrationNotification;
 use Illuminate\Http\Request;
 
 class CommuneController extends Controller
@@ -13,18 +15,19 @@ class CommuneController extends Controller
      */
     public function index()
     {
+        $departement = Departement::all();
         $commune = Commune::all();
-        return view('commune.index', compact('commune'));
+        return view('commune.index', compact('commune', 'departement'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()              
+    public function create()
     {
         $departement = Departement::all();
         $commune = Commune::all();
-       return view('commune.create', compact('commune','departement'));
+        return view('commune.create', compact('commune', 'departement'));
     }
 
     /**
@@ -38,11 +41,15 @@ class CommuneController extends Controller
             'arrondissement' => 'required',
             'numero' => 'required',
             'email' => 'required'
-            
+
         ]);
         $data = $request->all();
         Commune::create($data);
-        return redirect('commune');
+        // if ($request) {
+        //     $request->notify(new sendParentRegistrationNotification());
+        // }
+
+        return redirect('commune')->with('status', 'Commune ajouter avec success');
     }
 
     /**
@@ -61,7 +68,7 @@ class CommuneController extends Controller
     {
         $departement = Departement::all();
         $commune = Commune::find($id);
-        return view('commune.edit' , compact('commune','departement'));
+        return view('commune.edit', compact('commune', 'departement'));
     }
 
     /**
@@ -74,13 +81,13 @@ class CommuneController extends Controller
             'ville'  => 'required',
             'arrondissement'  => 'required',
             'numero'  => 'required',
-            'email'  => 'required' ,
-          ]);
-          $data = $request->all();
-          $commune = Commune::find($id);
-          $commune->update($data);
-  
-          return redirect('commune');
+            'email'  => 'required',
+        ]);
+        $data = $request->all();
+        $commune = Commune::find($id);
+        $commune->update($data);
+
+        return redirect('commune');
     }
 
     /**

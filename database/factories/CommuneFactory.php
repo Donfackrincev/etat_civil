@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Departement;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,12 +18,13 @@ class CommuneFactory extends Factory
     public function definition(): array
     {
         return [
-            'nom' => fake()->name(), 
-            'ville' => fake()->name(), 
-            'quartier' => fake()->name(), 
-            'departement' => fake()->name(), 
-            'numero' => fake()->phoneNumber(), 
+            'nom_commune' => fake()->name(),
+            'ville' => fake()->name(),
+            'arrondissement' => fake()->name(),
+            'numero' => fake()->phoneNumber(),
             'email' =>fake()->unique()->safeEmail(),
+            'departement_id' =>  Departement::inRandomOrder()->first()->ville,
+
             'created_at' => now()
         ];
     }

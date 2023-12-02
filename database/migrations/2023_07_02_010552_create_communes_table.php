@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('nom_commune');
             $table->string('ville');
             $table->string('arrondissement');
-            $table->integer('numero');
+            $table->string('numero');
             $table->string('email');
-            $table->foreignId('departement_id')->constrained();
+            $table->foreignId('departement_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

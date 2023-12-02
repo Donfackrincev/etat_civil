@@ -20,14 +20,36 @@
 
             <div class="card mb-5">
                 <div class="card-body">
+                    <center>
+                        <img src="{{ asset('assets/img/camer.png') }}" class="imm" alt="card image"
+                            style="width: 4%">
+                    </center>
                     <form method="POST" action="{{ url('medecin') }}" id="validationTopLabel" class="tooltip-end-top" novalidate="novalidate">
                         @csrf
-                        <select class="form-select" id="specificSizeSelect" name="personne_id">
-                            <option selected="selected">Selectionner la personne</option>
-                            @foreach($personne as $personne)
-                            <option value="{{ $personne->id }}">{{ $personne->id}} </option>
-                            @endforeach
-                        </select> <br>
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="texte" name="nom" required="">
+                            <span>Nom du medecin</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="texte" name="prenom" required="">
+                            <span>prenom du medecin</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="number" name="numero" required="">
+                            <span>Numero</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="email" name="email" required="">
+                            <span>Addresse email</span>
+                        </label>
+
+                        <label class="mb-3 top-label">
+                            <input class="form-control" type="text" name="domicile" required="">
+                            <span>Domicile</span>
+                        </label>
 
                         <label class="mb-3 top-label">
                             <input class="form-control" type="texte" name="nom_centre" required="">
@@ -40,7 +62,7 @@
                             <option value="infimier">Infimier</option>
                             <option value="docteur">Docteur</option>
                         </select> <br>
-                      
+
                         <button class="btn btn-primary" type="submit">
                             Ajouter
                         </button>

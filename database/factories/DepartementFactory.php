@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Region;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,9 +18,9 @@ class DepartementFactory extends Factory
     public function definition(): array
     {
         return [
-            'nom_pays' => fake()->name(), 
-            'region_id' =>  Region::inRandomOrder()->first()->id, 
-            'nom_departement' => fake()->name(), 
+            'nom_pays' => fake()->name(),
+            'region_id' =>  Region::inRandomOrder()->first()->id,
+            'nom_departement' => fake()->name(),
             'created_at' => now()
         ];
     }

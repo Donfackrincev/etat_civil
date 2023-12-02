@@ -29,7 +29,7 @@ class RegionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store ( Request $request )
     {
         $this->validate($request,[
             'nom_region' => 'required',
@@ -39,6 +39,12 @@ class RegionController extends Controller
         ]);
         $data = $request->all();
         Region::create($data);
+
+        // if($data){
+        //     foreach ($data as $data) {
+        //         $data->notify(new RegionNotification());
+        //     }
+        // }
         return redirect('region');
     }
 
@@ -74,8 +80,8 @@ class RegionController extends Controller
         $data = $request->all();
           $region = Region::find($id);
           $region->update($data);
-  
-          return redirect('region'); 
+
+          return redirect('region');
     }
 
     /**

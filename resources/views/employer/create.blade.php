@@ -20,6 +20,10 @@
 
             <div class="card mb-5">
                 <div class="card-body">
+                    <center>
+                        <img src="{{ asset('assets/img/camer.png') }}" class="imm" alt="card image"
+                            style="width: 4%">
+                    </center>
                     <form method="POST" action="{{ url('employer') }}" id="validationTopLabel" class="tooltip-end-top" novalidate="novalidate">
                         @csrf
 
@@ -42,14 +46,14 @@
                         <select class="form-select" id="specificSizeSelect" name="personne_id">
                             <option selected="selected">Selectionner le Nom</option>
                             @foreach($personne as $personne)
-                            <option value="{{ $personne->id }}">{{ $personne->id}} </option>
+                            <option value="{{ $personne->id }}">{{ $personne->nom}} </option>
                             @endforeach
                         </select> <br>
 
                         <select class="form-select" id="specificSizeSelect" name="commune_id">
                             <option selected="selected">Selectionner la commune</option>
                             @foreach($commune as $commune)
-                            <option value="{{ $commune->id }}">{{ $commune->id }} </option>
+                            <option value="{{ $commune->id }}">{{ $commune->nom_commune }} </option>
                             @endforeach
                         </select> <br>
 

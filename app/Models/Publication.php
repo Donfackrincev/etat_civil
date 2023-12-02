@@ -11,6 +11,6 @@ class Publication extends Model
     protected $guarded = [];
 
     public function employer(){
-        return $this->belongnToMany(employer::class);
+        return $this->belongsTo(employer::class);
     }
 }

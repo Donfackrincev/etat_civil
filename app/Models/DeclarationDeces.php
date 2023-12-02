@@ -13,11 +13,11 @@ class DeclarationDeces extends Model
     public function personne(){
         return $this->belongsTo(Personne::class);
     }
-    
+
     public function medecin(){
         return $this->belongsTo(medecin::class);
     }
-   
+
 }
-    
+
 

@@ -14,7 +14,5 @@ class Temoinage extends Model
         return $this->belongsTo(Personne::class);
     }
 
-    public function declaration_naissance(){
-        return $this->belongsTo(declarationNaissance::class);
-    }
+    
 }

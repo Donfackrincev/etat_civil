@@ -12,7 +12,7 @@ use Laratrust\Traits\HasRolesAndPermissions;
 
 class User extends Authenticatable
 {
-    use HasRolesAndPermissions; 
+    use HasRolesAndPermissions;
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -20,11 +20,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
+
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
 
     /**
      * The attributes that should be hidden for serialization.

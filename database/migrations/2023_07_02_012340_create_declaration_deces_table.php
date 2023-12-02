@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('declaration_deces', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('personne_id')->constrained();
+            $table->string('nom_deces');
+            $table->string('domicile');
+            $table->date('date_deces');
             $table->string('motif_deces');
             $table->string('lieu_deces');
-            $table->foreignId('medecin_id')->constrained();
+            $table->foreignId('medecin_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('personne_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

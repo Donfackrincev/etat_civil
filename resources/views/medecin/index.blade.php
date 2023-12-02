@@ -99,9 +99,9 @@
                                     <th class="text-muted text-small text-uppercase">N</th>
                                     <th class="text-muted text-small text-uppercase">Nom</th>
                                     <th class="text-muted text-small text-uppercase">Prenom</th>
-                                    <th class="text-muted text-small text-uppercase">CNI</th>
-                                    <th class="text-muted text-small text-uppercase">Sexe</th>
-                                    <th class="text-muted text-small text-uppercase">Date Naissance</th>
+                                    <th class="text-muted text-small text-uppercase">Numero</th>
+                                    <th class="text-muted text-small text-uppercase">Email</th>
+                                    <th class="text-muted text-small text-uppercase">Domicil</th>
                                     <th class="text-muted text-small text-uppercase">Nom de l'hopital</th>
                                     <th class="text-muted text-small text-uppercase">Fonction</th>
                                     <th class="text-muted text-small text-uppercase">Action</th>
@@ -112,11 +112,11 @@
                                 @foreach ($medecin as $medecin)
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ ($medecin->personne->nom)}}</td>
-                                    <td>{{ ($medecin->personne->prenom)}}</td>
-                                    <td>{{ ($medecin->personne->cni)}}</td>
-                                    <td>{{ ($medecin->personne->sexe)}}</td>
-                                    <td>{{ ($medecin->personne->date_naissance)}}</td>
+                                    <td>{{ ($medecin->nom)}}</td>
+                                    <td>{{ ($medecin->prenom)}}</td>
+                                    <td>{{ ($medecin->numero)}}</td>
+                                    <td>{{ ($medecin->email)}}</td>
+                                    <td>{{ ($medecin->domicile)}}</td>
                                     <td>{{ $medecin->nom_centre }}</td>
                                     <td>{{ $medecin->fontion}}</td>
 
@@ -134,14 +134,14 @@
 
                                             @if(Auth::User()->hasPermission('medecins-update'))
                                             <a href="{{url('medecin/' .$medecin->id. '/edit')}}">
-                                                <button type="button" class="btn btn-secondary mb-1"> <i class="fa fa-pencil-square-o"></i> </button>
+                                                <button type="button" class="btn btn-secondary mb-1" on> <i class="fa fa-pencil-square-o"></i> </button >
                                             </a>
                                             @endif
 
                                              @if(Auth::User()->hasPermission('medecins-delete'))
-                                            <button class="btn btn-icon btn-icon-end btn-danger mb-1" type="submit">
+                                            <button class="btn btn-icon btn-icon-end btn-danger mb-1" type="submit" onclick="return confirm('voulez vous vraiment supprimer')">
 
-                                                <i class="fa fa-trash"></i>
+                                                <i class="fa fa-trash"></i >
                                             </button>
                                             @endif
                                         </form>

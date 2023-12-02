@@ -9,14 +9,11 @@ class ActeDeces extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    
+
     public function declaration_deces(){
-        return $this->belongsTo(declaration_deces::class);
+        return $this->belongsTo(DeclarationDeces::class);
     }
 
-    public function personne(){
-        return $this->belongsTo(Personne::class);
-    }
     public function employer(){
         return $this->belongsTo(Employer::class);
     }
