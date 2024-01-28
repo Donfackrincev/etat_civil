@@ -106,10 +106,7 @@
                             <td> Dressé le/draw up on the:</td>
                             <td>{{ $deces->created_at }}</td>
                         </tr>
-                        <tr>
-                            <td> sur la declaration de/in accord</td>
-                            <td>{{ $deces->declaration_deces->medecin->personne->nom }}</td>
-                        </tr>
+                   
 
 
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,12 +23,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{asset('acceuil/lib/animate/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('acceuil/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('acceuil/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet')}}" />
+    <link href="{{ asset('acceuil/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('acceuil/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('acceuil/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet') }}" />
 
-    <link href="{{asset('acceuil/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('style.css')}}" rel="stylesheet">
+    <link href="{{ asset('acceuil/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -94,8 +93,8 @@
                 </div>
 
 
-                <a href="{{route('login')}}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
-                <a href="{{route('register')}}" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+                <a href="{{ route('login') }}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
+                <a href="{{ route('register') }}" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
 
 
             </div>
@@ -105,15 +104,19 @@
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
                     <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                        <h1 class="display-3 text-white mb-3 animated slideInDown">BIENVENUE A L'ETAT-CIVIL DU CAMEROUN </h1>
-                        <p class="fs-4 text-white mb-4 animated slideInDown">Un acte d'Etat-civil est un document officiel qui attested'un evenement important de la vie d'une personne tel que sa naissance,son mariage ou son déces
-                            </p>
+                        <h1 class="display-3 text-white mb-3 animated slideInDown">BIENVENUE A L'ETAT-CIVIL DU CAMEROUN
+                        </h1>
+                        <p class="fs-4 text-white mb-4 animated slideInDown">Un acte d'Etat-civil est un document
+                            officiel qui attested'un evenement important de la vie d'une personne tel que sa
+                            naissance,son mariage ou son déces
+                        </p>
                         <div class="position-relative w-75 mx-auto animated slideInDown">
                             <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text"
                                 placeholder="Eg: acte de deces">
                             <button type="button"
                                 class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2"
-                                style="margin-top: 7px;">Votre bien etre est notre prioriter chaque citoyen a droit au un acte de naissance </button>
+                                style="margin-top: 7px;">Votre bien etre est notre prioriter chaque citoyen a droit au
+                                un acte de naissance </button>
                         </div>
                     </div>
                 </div>
@@ -129,33 +132,39 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="acceuil/img/about.png" alt=""
-                            style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="acceuil/img/about.png"
+                            alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Cameroun</h6>
                     <h1 class="mb-4">Bienvenue A L'ETAT <span class="text-primary">CIVIL</span></h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
+                        et
                         eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
+                        et
                         eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
                     </p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights
+                            </p>
                         </div>
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations
+                            </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles
+                            </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City
+                                Tours
                             </p>
                         </div>
                         <div class="col-sm-6">
@@ -175,14 +184,14 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-                <h1 class="mb-5">Our Services</h1>
+                <h1 class="mb-5">Les Services de l'Etat civil</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item rounded pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5>WorldWide Tours</h5>
+                            <h5>Acte de naissance</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                         </div>
                     </div>
@@ -235,8 +244,9 @@
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="acceuil/img/DEC.jpg" alt="">
-                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
-                                   un acte de deces pour tous</div>
+                                <div
+                                    class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                    un acte de deces pour tous</div>
                                 <div
                                     class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
                                     acte de deces</div>
@@ -245,7 +255,8 @@
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="acceuil/img/destination-2.jpg" alt="">
-                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                <div
+                                    class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
                                     25% OFF</div>
                                 <div
                                     class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
@@ -255,7 +266,8 @@
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
                             <a class="position-relative d-block overflow-hidden" href="">
                                 <img class="img-fluid" src="acceuil/img/destination-3.jpg" alt="">
-                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                <div
+                                    class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
                                     35% OFF</div>
                                 <div
                                     class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
@@ -266,8 +278,8 @@
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
                     <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="acceuil/img/destination-4.jpg" alt=""
-                            style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="acceuil/img/destination-4.jpg"
+                            alt="" style="object-fit: cover;">
                         <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF
                         </div>
                         <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
@@ -550,8 +562,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-transparent" placeholder="Special Request"
-                                            id="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>
@@ -665,9 +676,11 @@
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>rincedonfack5@example.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i
+                                class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -736,16 +749,16 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('acceuil/lib/wow/wow.min.js')}}"></script>
-    <script src="{{asset('acceuil/lib/easing/easing.min.js')}}"></script>
-    <script src="{{asset('acceuil/lib/waypoints/waypoints.min.js')}}"></script>
-    <script src="{{asset('acceuil/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('acceuil/lib/tempusdominus/js/moment.min.js')}}"></script>
-    <script src="{{asset('acceuil/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
-    <script src="{{asset('acceuil/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+    <script src="{{ asset('acceuil/lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('acceuil/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('acceuil/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('acceuil/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('acceuil/lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ asset('acceuil/lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ asset('acceuil/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="{{asset('acceuil/js/main.js')}}"></script>
+    <script src="{{ asset('acceuil/js/main.js') }}"></script>
 </body>
 
 </html>
