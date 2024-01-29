@@ -75,7 +75,7 @@
                 <div class="user-container d-flex">
                     <a href="" class="d-flex user position-relative" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img class="profile" alt="profile" src="assets/img/camer.PNG">
+                        <img class="profile" alt="profile" src="{{ asset('assets/img/camer.PNG') }}">
                         <div class="name">Etat_civil
                         </div>
                     </a>
@@ -90,12 +90,8 @@
                                     <li>
                                         <a href="{{ url('profile') }}">profile</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Preferences</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Calendar</a>
-                                    </li>
+
+
                                 </ul>
                             </div>
                             <div class="col-6 pe-1 ps-1">
@@ -103,37 +99,10 @@
                                     <li>
                                         <a href="#">Security</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Billing</a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="row mb-1 ms-0 me-0">
-                            <div class="col-12 p-1 mb-2 pt-2">
-                                <div class="text-extra-small text-primary">APPLICATION</div>
-                            </div>
-                            <div class="col-6 ps-1 pe-1">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#">Themes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Language</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-6 pe-1 ps-1">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#">Devices</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Storage</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
                         <div class="row mb-1 ms-0 me-0">
                             <div class="col-12 p-1 mb-3 pt-3">
                                 <div class="separator-light"></div>
@@ -319,26 +288,25 @@
                             </li>
                         @endif
                         @if (Auth::User()->hasPermission('users-read'))
+                            <li>
+                                <a href="#blocks" data-href="Blocks.html">
+                                    <i class="fa fa-users"></i>
+                                    <span class="label">Users</span>
+                                </a>
+                                <ul id="blocks">
+                                    <li>
+                                        <a href="{{ url('user/create') }}">
+                                            <span class="label">Ajouter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('user') }}">
+                                            <span class="label">Liste</span>
+                                        </a>
+                                    </li>
 
-                        <li>
-                            <a href="#blocks" data-href="Blocks.html">
-                                <i class="fa fa-users"></i>
-                                <span class="label">Users</span>
-                            </a>
-                            <ul id="blocks">
-                                <li>
-                                    <a href="{{ url('user/create') }}">
-                                        <span class="label">Ajouter</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('user') }}">
-                                        <span class="label">Liste</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
                         @endif
 
                         <li>
@@ -1088,7 +1056,7 @@
     <script src="{{ asset('assets/js/plugins/notifies.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap-notify.min.js') }}"></script>
     <script src="{{ asset('assets/js/cs/autocomplete.custom.js') }}"></script>
-     <script src="{{ asset('assets/js/forms/controls.autocomplete.js') }}"></script>
+    <script src="{{ asset('assets/js/forms/controls.autocomplete.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/chartjs-plugin-datalabels.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/chartjs-plugin-rounded-bar.min.js') }}"></script>
     <script src="{{ asset('assets/js/cs/charts.extend.js') }}"></script>

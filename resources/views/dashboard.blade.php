@@ -180,12 +180,13 @@
                             <div class="row g-0 h-100 align-content-center">
                                 <div class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0">
                                     <a href="Pages.Portfolio.Detail.html" class="body-link text-truncate">Barmbrack</a>
-                                </div>
+                                 </div>
                                 <div class="col-4 col-md-2 d-flex align-items-center text-muted text-medium mb-1 mb-md-0">
                                     <span class="badge bg-outline-tertiary me-1">STOCK</span>
                                 </div>
                                 <div
-                                    class="col-4 col-md-3 d-flex align-items-center text-medium text-danger justify-content-center">
+
+                                class="col-4 col-md-3 d-flex align-items-center text-medium text-danger justify-content-center">
                                     <i data-acorn-icon="arrow-bottom" data-acorn-size="14" class="me-1"></i>
                                     <span class="text-medium">-18.4%</span>
                                 </div>
@@ -939,7 +940,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
 
     {{-- <div class="container">
