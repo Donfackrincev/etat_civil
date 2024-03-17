@@ -62,14 +62,11 @@ class RegisteredUserController extends Controller
 
 
 
-        if($user){
-            $user->notify(new RegionNotification());
-        }
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/');
     }
 }

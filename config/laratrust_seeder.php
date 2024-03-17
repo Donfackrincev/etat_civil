@@ -12,42 +12,22 @@ return [
     'truncate_tables' => true,
 
     'roles_structure' => [
-        'super_admin' => [
+        'admin' => [
             'users' => 'c,r,u,d,s',
-            'regions' => 'c,r,u,d,s',
-            'departements' => 'c,r,u,d,s',
-            'communes' => 'c,r,u,d,s',
-            'personnes' => 'c,r,u,d,s',
-            'employers' => 'c,r,u,d,s',
-            'medecins' => 'c,r,u,d,s',
-            'publications' => 'c,r,u,d,s,p',
-            'declaration_naissances' => 'c,r,u,d,s,p',
-            'declaration_deces' => 'c,r,u,d,s,p',
-            'acte_naissances' => 'c,r,u,d,s,p,t',
-            'acte_deces' => 'c,r,u,d,s,p',
-            'acte_mariages' => 'c,r,u,d,s,p',
-            'temoinages' => 'c,r,u,d,',
-        ],
-        'admin_local' => [
-            'regions' => 'c,r,u,d,s',
-            'employers' => 'c,r,u,d,s',
-            'medecins' => 'c,r,u,d,s',
-            'temoinages' => 'c,r,u,d,',
+            'produit' => 'c,r,u,d,s',
+            'commande' => 'c,r,u,d,s',
+            'fournisseur' => 'c,r,u,d,s',
+            'categorie' => 'c,r,u,d,s',
+
 
         ],
-        'maire' => [
-            'profile' => 'r,u',
-        ],
-       
+
         'secretaire' => [
-            'module_1_name' => 'c,r,u,d',
-            'temoinages' => 'c,r,u,d,',
+            'projet' => 'c,r,u,d',
+
 
         ],
-      
-        'statisticien' => [
-            'module_1_name' => 'c,r,u,d',
-        ],
+
     ],
 
     'permissions_map' => [
@@ -55,8 +35,6 @@ return [
         'r' => 'read',
         'u' => 'update',
         'd' => 'delete',
-        's' => 'show',
-        'p' => 'print',
-        't' => 'status'
+        's' => 'show'
     ],
 ];
